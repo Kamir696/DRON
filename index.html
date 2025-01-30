@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación de Mapas para Trazar Caminos</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="controls">
+        <button id="ruta-dron" class="btn">Ruta de Drones</button>
+        <button id="ruta-completa" class="btn">Ruta Completa</button>
+        <button id="limpiar" class="btn">Limpiar Marcadores</button>
+        <button id="limpiar-todo" class="btn">Limpiar Todo</button>
+    </div>
+    <div id="map" style="height: 600px;"></div>
+    <div id="info" class="info"></div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/@turf/turf/turf.min.js"></script>
+</body>
+</html>

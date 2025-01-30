@@ -44,7 +44,7 @@ function obtenerRuta(transporte, unirRutas = false) {
                 const polyline = L.polyline(rutasAnteriores, { color: 'blue' }).addTo(map);
                 map.fitBounds(polyline.getBounds());
 
-                // Mostrar flechas en la ruta
+                // Mostrar flechas y números en la ruta
                 for (let i = 0; i < routeCoords.length - 1; i++) {
                     const start = routeCoords[i];
                     const end = routeCoords[i + 1];
@@ -59,6 +59,16 @@ function obtenerRuta(transporte, unirRutas = false) {
                         })
                     }).addTo(map);
                     arrows.push(arrow);
+
+                    // Crear un marcador con el número de la arista
+                    const numberMarker = L.marker(midPoint, {
+                        icon: L.divIcon({
+                            className: 'number-icon',
+                            html: `<div style="background-color: white; border: 1px solid black; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;">${i + 1}</div>`,
+                            iconSize: [20, 20]
+                        })
+                    }).addTo(map);
+                    arrows.push(numberMarker);
                 }
 
                 // Mostrar información de la ruta
